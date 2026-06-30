@@ -348,6 +348,12 @@ nav.scrolled {
     border-color: rgba(14, 165, 233, 0.3);
 }
 
+.project-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
 .project-content h3 {
     font-size: 1.6rem;
     margin-bottom: 1rem;
