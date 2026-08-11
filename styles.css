@@ -146,6 +146,8 @@ nav.scrolled {
 
 .profile-img-container {
     flex-shrink: 0;
+    position: relative;
+    z-index: 1;
 }
 
 .profile-img {
@@ -206,6 +208,8 @@ nav.scrolled {
 .social-links {
     display: flex;
     gap: 1.5rem;
+    position: relative;
+    z-index: 10;
 }
 
 .social-btn {
@@ -220,6 +224,11 @@ nav.scrolled {
     background: var(--surface-color);
     border: 1px solid var(--surface-border);
     color: var(--text-main);
+    cursor: pointer;
+    pointer-events: auto;
+    touch-action: manipulation;
+    position: relative;
+    z-index: 10;
 }
 
 .social-btn:hover {
@@ -518,13 +527,22 @@ footer {
         display: flex;
         flex-direction: column;
         align-items: center;
+        position: relative;
+        z-index: 5;
     }
     .summary {
         text-align: center;
     }
+    .profile-img-container {
+        width: 200px;
+        height: 200px;
+        flex-shrink: 0;
+        position: relative;
+        z-index: 1;
+    }
     .profile-img {
-        width: 250px;
-        height: 250px;
+        width: 200px;
+        height: 200px;
     }
     .name { font-size: 2.5rem; }
     .nav-links { display: none; }
@@ -532,5 +550,11 @@ footer {
     .section { padding: 3rem 1.5rem; }
     .project-card, .skill-category, .about-container { padding: 1.5rem; }
     .hero { padding: 0 1.5rem; padding-top: 6rem; }
-    .social-btn { padding: 0.5rem 1rem; font-size: 0.9rem; }
+    .social-links { gap: 1rem; }
+    .social-btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+        min-height: 44px; /* Minimum touch target size */
+        touch-action: manipulation;
+    }
 }
